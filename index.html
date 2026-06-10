@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔍 गुगल सर्चको लागि (SEO): यसले गर्दा गुगल क्रोममा सर्च गर्दा मद्दत पुग्छ -->
+    <title>The Alpha Squad - हाम्रो खतरा साथीहरूको ग्रुप 👥</title>
+    <meta name="description" content="The Alpha Squad - FRIENDS">
+    <meta name="keywords" content="The Alpha Squad, Alpha Squad, हाम्रो साथीहरूको ग्रुप, Friends Profile Website">
+
+    <style>
+        /* समग्र डिजाइन (Dark & Premium Theme) */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0f172a; /* गाढा कालो/निलो ब्याकग्राउन्ड */
+            color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e1b4b, #311042);
+            padding: 40px 20px;
+            border-bottom: 3px solid #6366f1;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            color: #6366f1;
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* नयाँ साथी थप्ने फारम (Add Form) */
+        .form-container {
+            background: #1e293b;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+        }
+
+        .form-container h3 { margin-top: 0; color: #38bdf8; }
+
+        .form-container input, .form-container textarea {
+            width: 90%;
+            padding: 12px;
+            margin: 8px 0;
+            background: #0f172a;
+            border: 1px solid #475569;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-container button {
+            width: 95%;
+            padding: 12px;
+            background: linear-gradient(90deg, #4f46e5, #06b6d4);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .form-container button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+        }
+
+        /* साथीहरूको कार्ड बस्ने मुख्य ठाउँ */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* एउटा साथीको बक्स (Premium Profile Card) */
+        .profile-card {
+            background-color: #1e293b;
+            border-radius: 20px;
+            border: 1px solid #334155;
+            width: 280px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* माउस लैजाँदा बत्ती बल्ने जस्तो प्रो इफेक्ट */
+        .profile-card:hover {
+            transform: translateY(-10px);
+            border-color: #06b6d4;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+        }
+
+        /* साथीको फोटो */
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4f46e5;
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .profile-card:hover .profile-img {
+            border-color: #06b6d4;
+        }
+
+        /* नाम, ठेगानाको टेक्स्ट स्टाइल */
+        .name {
+            font-size: 1.5rem;
+            color: #f8fafc;
+            margin: 10px 0 5px 0;
+        }
+
+        .address {
+            font-size: 0.95rem;
+            color: #f43f5e; /* रातो/पिंक रंग लोकेशनका लागि */
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: rgba(244, 63, 94, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .bio {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- हेडर सेक्सन -->
+    <header>
+        <h1>⚡ THE ALPHA SQUAD ⚡</h1>
+        <p class="subtitle">FRIENDS</p>
+    </header>
+
+    <!-- नयाँ साथी थप्ने फारम -->
+    <div class="form-container">
+        <h3>➕ नयाँ स्क्वाड सदस्य थप्नुहोस्</h3>
+        <input type="text" id="friendName" placeholder="साथीको पूरा नाम" required>
+        <input type="text" id="friendAddress" placeholder="ठेगाना (उदा: धरान, नेपाल)" required>
+        <input type="text" id="friendPhoto" placeholder="फोटोको इन्टरनेट लिङ्क (URL)" value="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150">
+        <textarea id="friendBio" placeholder="उसको बारेमा एउटा बबाल डायलग वा विवरण..." rows="2" required></textarea>
+        <button onclick="addFriend()">ग्रुपमा दर्ता गर्नुहोस् 🚀</button>
+    </div>
+
+    <!-- १० जना साथीहरूको लिस्ट बस्ने ठाउँ -->
+    <div class="container" id="friendsGrid">
+
+        <!-- सदस्य १ -->
+        <div class="profile-card">
+            <img src="ishwar.png.png" class="profile-img">
+            <h3 class="name">ISHWAR BASNET</h3>
+            <p class="address">📍 SUNSARI, ITAHARI</p>
+            <p class="bio"> "हाइट सानो छ तर ग्रुपमा 'हुकुम' भने यिनकै चल्छ। सानो प्याकेट, ठुलो धमाका!"😆 </p>
+        </div>
+
+        <!-- सदस्य २ -->
+        <div class="profile-card">
+            <img src="ramit.jpg" class="profile-img">
+            <h3 class="name">RAMIT BASNET</h3>
+            <p class="address">📍 SUNSARI, ITAHARI </p>
+            <p class="bio">"नाताले सँगी,नामले 'काका संसारका अगाडि भद्र, हाम्रो अगाडि अभद्र! बाहिर सोझो बन्ने नाटक😅 </p>
+        </div>
+
+        <!-- सदस्य ३ -->
+        <div class="profile-card">
+            <img src="bipin.jpg.jpg" class="profile-img">
+            <h3 class="name">BIPIN SINGH</h3>
+            <p class="address">📍 SUNSARI, ITAHARI</p>
+            <p class="bio"> "यसको मुड र नेपालको मौसम कहिले बदलिन्छ, कसैलाई थाहा हुन्न।" </p>
+        </div>
+
+        <!-- सदस्य ४ -->
+        <div class="profile-card">
+            <img src="sandesh.jpg.jpg" class="profile-img">
+            <h3 class="name">SANDESH SUBEDHI</h3>
+            <p class="address">📍 SUNSARI, JHUMKA </p>
+            <p class="bio">उचाई जति माथि गयो, उहाँको सोझोपन त्यति नै तल पाताल तिर भासियो!"😆</p>
+        </div>
+
+        <!-- सदस्य ५ -->
+        <div class="profile-card">
+            <img src="rojesh.jpg.jpg" class="profile-img">
+            <h3 class="name">ROJESH OJHA</h3>
+            <p class="address">📍 SUNSARI, ITAHARI</p>
+            <p class="bio">"यसको २४ घण्टा इन्स्टाग्राम र टिकटकका रिल्स हेर्दै र सेयर गर्दैमा बित्छ।😆</p>
+        </div>
+
+        <!-- सदस्य ६ -->
+        <div class="profile-card">
+            <img src="Alish.jpg.jpg" class="profile-img">
+            <h3 class="name">ALISH SHEIKH </h3>
+            <p class="address">📍 SUNSARI, ITAHARI</p>
+            <p class="bio">"जिउडाल एकदमै भारी,तर मनको चाहिँ एकदमै सफा सफारी! ग्रुपको जग, जसले सिङ्गो ग्याङको वजन धानेको छ।😆</p>
+        </div>
+
+        <!-- सदस्य ७ -->
+        <div class="profile-card">
+            <img src="suman.jpg.jpg" class="profile-img">
+            <h3 class="name">SUMAN BASNET </h3>
+            <p class="address">📍 SUNSARI, ITAHARI </p>
+            <p class="bio">१० मिनेट बोल्न पाएन भने यिनलाई सास फेर्न गाह्रो हुन्छ। ग्रुपको रेडियो स्टेशन!"😅 </p>
+        </div>
+
+        <!-- सदस्य ८ -->
+        <div class="profile-card">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150" class="profile-img">
+            <h3 class="name">SAHAM KARKI </h3>
+            <p class="address">📍 SUNSARI, ITAHARI </p>
+            <p class="bio">"प्रेमको भोको, तर कोही नजिक आयो भने 'म त सोझो छु' भन्दै भाग्ने!😅</p>
+        </div>
+
+        <!-- सदस्य ९ -->
+        <div class="profile-card">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150" class="profile-img">
+            <h3 class="name">RAJU KC </h3>
+            <p class="address">📍 SUNSARI, ITAHARI </p>
+            <p class="bio">"ग्रुपमा भन्दा बढी च्याट अन्तै बिजी हुने, प्रेमको लिभिङ लिजेन्ड!"😅।</p>
+        </div>
+
+        <!-- सदस्य १० -->
+        <div class="profile-card">
+            <img src="yugal.jpg.jpg" class="profile-img">
+            <h3 class="name">YUGAL RAI </h3>
+            <p class="address">📍 SUNSARI, ITAHARI</p>
+            <p class="bio">सबैले जिस्काउने एउटै साझा निसाना, तर मनको चाहिँ एकदमै सफा!"</p>
+        </div>
+
+    </div>
+
+    <!-- जाभास्क्रिप्ट लजिक्: नयाँ साथी थप्नको लागि -->
+    <script>
+        function addFriend() {
+            const name = document.getElementById("friendName").value;
+            const address = document.getElementById("friendAddress").value;
+            const photo = document.getElementById("friendPhoto").value;
+            const bio = document.getElementById("friendBio").value;
+
+            if(name === "" || address === "" || bio === "") {
+                alert("कृपया सबै विवरणहरू भर्नुहोस्!");
+                return;
+            }
+
+            const grid = document.getElementById("friendsGrid");
+            const newCard = document.createElement("div");
+            newCard.className = "profile-card";
+            newCard.innerHTML = `
+                <img src="${photo}" alt="${name}" class="profile-img">
+                <h3 class="name">${name}</h3>
+                <p class="address">📍 ${address}</p>
+                <p class="bio">${bio}</p>
+            `;
+
+            grid.appendChild(newCard);
+
+            // थपेपछि बक्स खाली गर्ने
+            document.getElementById("friendName").value = "";
+            document.getElementById("friendAddress").value = "";
+            document.getElementById("friendBio").value = "";
+        }
+    </script>
+</body>
+</html>
