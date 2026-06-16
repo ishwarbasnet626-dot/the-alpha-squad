@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- 🔍 गुगल सर्चको लागि (SEO): यसले गर्दा गुगल क्रोममा सर्च गर्दा मद्दत पुग्छ -->
-    <title>The Alpha Squad - हाम्रो खतरा साथीहरूको ग्रुप 👥</title>
+    <title>The Alpha Squad  👥</title>
     <meta name="description" content="The Alpha Squad - FRIENDS">
-    <meta name="keywords" content="The Alpha Squad, Alpha Squad, हाम्रो साथीहरूको ग्रुप, Friends Profile Website">
+    <meta name="keywords" content="The Alpha Squad, Alpha Squad, Friends Profile Website">
 
     <style>
         /* समग्र डिजाइन (Dark & Premium Theme) */
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #0f172a; /* गाढा कालो/निलो ब्याकग्राउन्ड */
-            color: #f8fafc;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+    background-color: #0d0e15;
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+}
 
         header {
             background: linear-gradient(135deg, #1e1b4b, #311042);
@@ -26,13 +23,36 @@
             border-bottom: 3px solid #6366f1;
         }
 
-        h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            letter-spacing: 2px;
-            color: #6366f1;
-            text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
-        }
+       h1 {
+    margin: 0;
+    font-size: 3.5rem; /* अलिकति ठूलो र आक्रामक */
+    letter-spacing: 5px;
+    color: #ffffff; /* मुख्य अक्षर सेतो */
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    
+    /* 🔥 थ्रीडी रगत जस्तो नियोन ग्लो इफेक्ट */
+    text-shadow: 
+        0px 4px 0px #111,                  
+        0 0 10px #ff0043,                  
+        0 0 30px #ff0043,                  
+        0 0 60px #ff0043;                  
+        
+    /* 🚨 बत्ती चम्किने एनिमेसन */
+    animation: flicker 2s infinite alternate;
+}
+
+/* ⚡ यो एनिमेसन कोड पनि `h1` को ठीक तल थपिदिनुहोस् */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0px 4px 0px #111, 0 0 10px #ff0043, 0 0 30px #ff0043, 0 0 60px #ff0043;
+    }
+    20%, 24%, 55% {        
+        text-shadow: none; 
+        color: #450a18;    
+    }
+}
 
         .subtitle {
             color: #94a3b8;
@@ -151,6 +171,14 @@
             color: #94a3b8;
             line-height: 1.5;
         }
+        h1 {
+         text-align: center;
+         color: #fff;
+         text-shadow: 0 0 10px #00f2fe, 0 0 20px #00f2fe, 0 0 40px #00f2fe;
+         font-size: 2.5rem;
+         letter-spacing: 2px;
+         margin-top: 30px;
+     }
     </style>
 </head>
 <body>
@@ -160,6 +188,10 @@
         <h1>⚡ THE ALPHA SQUAD ⚡</h1>
         <p class="subtitle">FRIENDS</p>
     </header>
+    <div style="margin: 20px auto; max-width: 500px; padding: 0 20px;">
+    <input type="text" id="searchBox" onkeyup="searchFriend()" placeholder="🔍 साथीको नाम वा ठेगाना सर्च गर्नुहोस्..." 
+    style="width: 100%; padding: 12px; font-size: 1.1rem; border-radius: 8px; border: 2px solid #6366f1; background: #1e293b; color: white;">
+</div>
 
     <!-- नयाँ साथी थप्ने फारम -->
     <div class="form-container">
@@ -257,6 +289,12 @@
     </div>
 
     <!-- जाभास्क्रिप्ट लजिक्: नयाँ साथी थप्नको लागि -->
+     <div id="gangster-bgm" style="position: absolute; top: -9999px; left: -9999px;">
+        <iframe id="youtube-player" width="100" height="100" 
+            src="src="https://www.youtube.com/embed/SgQu6G69vxs?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=SgQu6G69vxs"
+            frameborder="0" allow="autoplay">
+        </iframe>
+    </div>
     <script>
         function addFriend() {
             const name = document.getElementById("friendName").value;
@@ -286,6 +324,7 @@
             document.getElementById("friendAddress").value = "";
             document.getElementById("friendBio").value = "";
         }
+        
     </script>
 </body>
 </html>
