@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ishwarbasnet626-dot.github.io/the-alpha-squad/sitemap.xml
